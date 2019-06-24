@@ -1,0 +1,16 @@
+D:\HanoiTower\HanoiTower\bin\Debug\HanoiTower.exe.config
+D:\HanoiTower\HanoiTower\bin\Debug\HanoiTower.exe
+D:\HanoiTower\HanoiTower\bin\Debug\HanoiTower.pdb
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.csprojAssemblyReference.cache
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.MainForm.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Properties.Resources.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.csproj.GenerateResource.cache
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.csproj.CoreCompileInputs.cache
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.exe
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.pdb
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level1Form.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level2Form.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level3Form.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level4Form.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level5Form.resources
+D:\HanoiTower\HanoiTower\obj\Debug\HanoiTower.Level6Form.resources
