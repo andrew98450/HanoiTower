@@ -48,7 +48,7 @@ namespace HanoiTower
             {
                 pole1_status.Push(tower_arr[i]);
             }
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 label4.Text += pole + "\r\n";
                 label5.Text += pole + "\r\n";
