@@ -6,8 +6,8 @@ namespace HanoiTower
 {
     public partial class Level4Form : Form
     {
-        const int limit_count = 90;
         const int tower_count = 6;
+        double limit_count = Math.Pow(2, tower_count) - 1 + 10;
         int count = 1;
         bool is_push = false;
         string[] tower = { "=", "===", "=====", "=======", "=========",
@@ -30,23 +30,20 @@ namespace HanoiTower
             pole1_status.Clear();
             pole2_status.Clear();
             pole3_status.Clear();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
+            label3.Text = "";
+            label4.Text = "";
+            label5.Text = "";
             count = 1;
             checkBox1.Checked = false;
             is_push = false;
             label1.Text = "搬移次數:";
             label2.Text = "限制搬移次數:";
-            button3.Text = "Pop";
-            button4.Text = "Push";
-            button5.Text = "Push";
             button3.Enabled = true;
             button4.Enabled = false;
             button5.Enabled = false;
             for (int i = 0; i < tower.Length; i++)
             {
-                textBox1.Text += tower[i] + "\r\n";
+                label3.Text += tower[i] + "\r\n";
             }
             for (int i = 0; i < tower.Length; i++)
             {
@@ -54,8 +51,8 @@ namespace HanoiTower
             }
             for (int i = 1; i <= 6; i++)
             {
-                textBox2.Text += pole + "\r\n";
-                textBox3.Text += pole + "\r\n";
+                label4.Text += pole + "\r\n";
+                label5.Text += pole + "\r\n";
             }
         }
         public void Pop(int move_pole)
@@ -77,7 +74,7 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox1.Text = str;
+                        label3.Text = str;
                     }
                     else
                     {
@@ -100,7 +97,7 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox2.Text = str;
+                        label4.Text = str;
                     }
                     else
                     {
@@ -123,7 +120,7 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox3.Text = str;
+                        label5.Text = str;
                     }
                     else
                     {
@@ -154,11 +151,11 @@ namespace HanoiTower
                             {
                                 str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                             }
-                            textBox1.Text = str;
                             if (checkBox1.Checked == true)
                             {
                                 label1.Text = "搬移次數:" + count++.ToString();
                             }
+                            label3.Text = str;
                         }
                         else
                         {
@@ -180,11 +177,11 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox1.Text = str;
                         if (checkBox1.Checked == true)
                         {
                             label1.Text = "搬移次數:" + count++.ToString();
                         }
+                        label3.Text = str;
                     }
                     break;
                 case 2:
@@ -204,11 +201,11 @@ namespace HanoiTower
                             {
                                 str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                             }
-                            textBox2.Text = str;
                             if (checkBox1.Checked == true)
                             {
                                 label1.Text = "搬移次數:" + count++.ToString();
                             }
+                            label4.Text = str;
                         }
                         else
                         {
@@ -230,11 +227,11 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox2.Text = str;
                         if (checkBox1.Checked == true)
                         {
                             label1.Text = "搬移次數:" + count++.ToString();
                         }
+                        label4.Text = str;
                     }
                     break;
                 case 3:
@@ -254,11 +251,11 @@ namespace HanoiTower
                             {
                                 str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                             }
-                            textBox3.Text = str;
                             if (checkBox1.Checked == true)
                             {
                                 label1.Text = "搬移次數:" + count++.ToString();
                             }
+                            label5.Text = str;
                         }
                         else
                         {
@@ -280,11 +277,11 @@ namespace HanoiTower
                         {
                             str += tower[Convert.ToInt32(tmp_arr[i]) - 1] + "\r\n";
                         }
-                        textBox3.Text = str;
                         if (checkBox1.Checked == true)
                         {
                             label1.Text = "搬移次數:" + count++.ToString();
                         }
+                        label5.Text = str;
                     }
                     break;
             }
@@ -296,7 +293,14 @@ namespace HanoiTower
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            label2.Text = "限制搬移次數:" + limit_count.ToString();
+            if (checkBox1.Checked == true)
+            {
+                label2.Text = "限制搬移次數:" + limit_count.ToString();
+            }
+            else
+            {
+                label2.Text = "限制搬移次數:";
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -316,9 +320,6 @@ namespace HanoiTower
             button3.Enabled = false;
             button4.Enabled = true;
             button5.Enabled = true;
-            button3.Text = "Pop";
-            button4.Text = "Push";
-            button5.Text = "Push";
             if (is_push == true)
             {
                 is_push = false;
@@ -342,9 +343,6 @@ namespace HanoiTower
             button3.Enabled = true;
             button4.Enabled = false;
             button5.Enabled = true;
-            button3.Text = "Push";
-            button4.Text = "Pop";
-            button5.Text = "Push";
             if (is_push == true)
             {
                 is_push = false;
@@ -368,9 +366,6 @@ namespace HanoiTower
             button3.Enabled = true;
             button4.Enabled = true;
             button5.Enabled = false;
-            button3.Text = "Push";
-            button4.Text = "Push";
-            button5.Text = "Pop";
             if (is_push == true)
             {
                 is_push = false;
